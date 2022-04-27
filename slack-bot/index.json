@@ -6,7 +6,7 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Step 1 - Sending a Message via Bot",
         "text": "step1.md"
       },
       {
@@ -16,18 +16,27 @@
       {
         "title": "Step 3",
         "text": "step3.md"
+      },
+      {
+        "title": "Step 4",
+        "text": "step4.md"
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "code": "setup.sh"
     },
     "finish": {
       "text": "finish.md"
     }
   },
   "environment": {
-    "uilayout": "editor-terminal"
+    "uilayout": "editor-terminal",
+    "uieditorpath": "/root/app"
   },
+  "files": [
+    "main.py"
+  ],
   "backend": {
     "imageid": "python:3.8"
   }
