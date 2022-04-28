@@ -1,5 +1,5 @@
 {
-  "title": "Building a Slack Bot",
+  "title": "Building a Slack Bot with Python",
   "description": "This tutorial demonstrates how to build a simple software bot for Slack.",
   "difficulty": "Intermediate",
   "time": "1 hours",
@@ -10,8 +10,9 @@
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
-        "text": "step2.md"
+        "title": "Step 2 - Event Handling",
+        "text": "step2.md",
+        "code": "setup_step2.sh"
       },
       {
         "title": "Step 3",
@@ -32,7 +33,8 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "/root/app"
+    "uieditorpath": "/root/app",
+    "uisettings": "python"
   },
   "files": [
     "main.py"
