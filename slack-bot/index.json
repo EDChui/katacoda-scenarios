@@ -11,8 +11,7 @@
       },
       {
         "title": "Step 2 - Event Handling",
-        "text": "step2.md",
-        "background": "setup_step2.sh"
+        "text": "step2.md"
       },
       {
         "title": "Step 3",

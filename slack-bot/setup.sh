@@ -1,1 +1,2 @@
-mkdir -p app; cd app
+mkdir -p app
+cd app

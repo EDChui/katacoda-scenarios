@@ -35,7 +35,7 @@ Then we have to give the bot some permissions to send messages in our workspace.
 
 ## Setup Environment Variable(s)
 
-It is a good practice to set the OAuth Token as environment variable instead of purely pasting it in the Python code. See [here](https://api.slack.com/authentication/best-practices)
+It is a good practice to set the OAuth Token as environment variable instead of purely pasting it in the Python code. See [here](https://api.slack.com/authentication/best-practices).
 
 1. First, create a `.env` file.
    
@@ -56,6 +56,7 @@ It is a good practice to set the OAuth Token as environment variable instead of 
    import os
    from dotenv import load_dotenv
 
+   # Load environment variable(s).
    load_dotenv()
    OAUTH_TOKEN=os.getenv("OAUTH_TOKEN")
    </pre>
@@ -78,6 +79,7 @@ It is a good practice to set the OAuth Token as environment variable instead of 
 3. Create a web client instance
 
    <pre class="file" data-filename="main.py" data-target="append">
+   # Create a web client instance.
    client = WebClient(token=OAUTH_TOKEN)
    </pre>
 
