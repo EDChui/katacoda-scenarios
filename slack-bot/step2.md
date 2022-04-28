@@ -1,14 +1,14 @@
-# Reply to a @mention message
+# Reply to a @mention Message
 
-This part of the tutorial will show how the bot can send a message only when it is mentioned using @mention feature.
+This part of the tutorial will show how the bot can send a message only when it is mentioned using [@mention](https://slack.com/help/articles/205240127-Use-mentions-in-Slack#mention-someone) feature.
 
-In this part we will use [slack-bolt](https://pypi.org/project/slack-bolt/) instead of [slackeventapi](https://pypi.org/project/slackeventsapi/) as Bolt covers not only Events API but also all the latest Slack Platform features.
+From this part onward, we will use [slack-bolt](https://pypi.org/project/slack-bolt/) instead of [slack-sdk](https://pypi.org/project/slack-sdk/) and [slackeventapi](https://pypi.org/project/slackeventsapi/) as the Bolt framework is build on top of slack-sdk and covers not only the Events API, but also all the latest Slack Platform features.
 
 ## Configuration in Slack App
 
 ### Create an App Token
 
-Before we start coding, we have to make some more configuration for out bot.
+Before we start coding, we have to make some more configuration for our bot.
 
 1. Go to https://api.slack.com/apps and select your app.
 2. In the "Basic Information" of Settings, scroll down to the section *"App-Level Tokens"*, select **"Generate Token and Scopes"**.
@@ -26,7 +26,7 @@ Before we start coding, we have to make some more configuration for out bot.
 ### Enable Socket Mode
 
 1. In the left panel, select **"Socket Mode"**
-2. Select **"Enable Socket Mode"**
+2. Toggle **"Enable Socket Mode"**
 
 ## Setting up Slack Bolt
 
@@ -65,14 +65,12 @@ Before we start coding, we have to make some more configuration for out bot.
 4. Load the newly added environment variable
 
    <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-load-new-environment-variable">
-   SLACK_APP_TOKEN=os.getenv("SLACK_APP_TOKEN")
-   </pre>
+   SLACK_APP_TOKEN=os.getenv("SLACK_APP_TOKEN")</pre>
 
 5. Initialize the app with the bot token
 
    <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-initialize-app">
-   app = App(token=SLACK_BOT_TOKEN)
-   </pre>
+   app = App(token=SLACK_BOT_TOKEN)</pre>
 
 6. Start the app in the main function
    
@@ -86,7 +84,7 @@ Before we start coding, we have to make some more configuration for out bot.
 
    `python main.py`{{execute interrupt}}
 
-   The console will output "Bolt app is running!" if everything works fine.
+   The console will output "Bolt app is running!" if everything is setup properly.
 
 ## Event Handling
 
@@ -104,11 +102,12 @@ As we want our bot to subscribe to @mention event, we have to enable such event 
 
 ## Listen to the Event
 
-Here we will build a function with a decorator `@app.event` which will listen to the "app_mention" event.
+Here we will build a function using the decorator `@app.event` which will allow the bot to listen to the "app_mention" event.
 
-When the event is triggered, a regular expression is used to check the text, which mentioned the bot, contains the word "hello" (regardless of case). If the regex is matched, the bot will reply "Hello @username" accordingly. 
+When the event is triggered, a regular expression is used to check the text that sent to the bot to see if it contains the word "hello" (regardless of case). If the regex is matched, the bot will reply "Hello @username" accordingly. 
 
 <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-listen-incoming-app-mention-event">
+# Reply message that mentioned the bot.
 @app.event("app_mention")
 def reply_mention(event, say):
    if (re.search("hello", event["text"], re.IGNORECASE)):
@@ -119,7 +118,7 @@ We can try to run the bot with
 
 `python main.py`{{execute interrupt}}
 
-If you have not added the bot to the channel, Slackbot (Yes, it is another bot) will remind you to invite our bot to the channel.
+If you have not added the bot to the channel, Slackbot (Yes, it is a bot by Slack) will remind you to invite our bot to the channel.
 
 ![Add Bot to Channel](./assets/step2/add_bot_to_channel.jpg)
 

@@ -2,7 +2,7 @@
 
 This part of the tutorial will show how the bot can send a message using [slack-sdk](https://pypi.org/project/slack-sdk/) library.
 
-Please note that we are *NOT* using [slackclient](https://pypi.org/project/slackclient/) in this tutorial as it is now a legacy code.
+Please note that we are *NOT* using [slackclient](https://pypi.org/project/slackclient/) in this tutorial as it is announced to be a legacy code.
 
 ## Create an App
 
@@ -17,7 +17,7 @@ First go to https://api.slack.com/ to create our first app.
 
 ## Give Permission(s) to the App
 
-Then we have to give the bot some permissions to send messages in our workspace. It is always a good idea to limit the resources that the bot can access. (See [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)).
+Then we have to give the bot some permissions to send messages in our Slack workspace. It is always a good idea to limit the resources that the bot can access. (See [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)).
 
 1. Under the *Basic Information* of Settings, select **"Bots"** in the menu of "Add features and functionality".
    
@@ -67,7 +67,7 @@ It is a good practice to set the OAuth Token as environment variable instead of 
 
    `pip install slack-sdk`{{execute}}
 
-   Note that we are *NOT* using [slackclient](https://pypi.org/project/slackclient/) in this tutorial as it is now a legacy code.
+   Again, note that we are *NOT* using [slackclient](https://pypi.org/project/slackclient/) in this tutorial as it is now a legacy code.
 
 2. Import the libraries for the web client and exception
 
@@ -86,7 +86,7 @@ It is a good practice to set the OAuth Token as environment variable instead of 
 4. Create a function for sending message to a specific channel
 
    This function takes the channel name or channel ID and the message to be sent as the parameter.
-   Channel name should be in the format of "#*something*", for exanple, "#general".
+   Channel name should be in the format of "#*something*", for example, "#general".
    Channel ID should looks something like "C0XXXXXX", you will learn how to get it in the next step.
 
    <pre class="file" data-filename="main.py" data-target="append">
