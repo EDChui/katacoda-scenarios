@@ -54,13 +54,13 @@ Here we will build a function using the decorator `@app.command` which will allo
 <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-handle-issue-count-slash-command">
 @app.command("/issue_count")
 def get_issue_count(ack, command, respond):
-   # TODO-acknowledge-command-request
+# TODO-acknowledge-command-request
 
-   # TODO-split-string-into-list-as-arguments
+# TODO-split-string-into-list-as-arguments
 
-   # TODO-arguments-checking
+# TODO-arguments-checking
 
-   # TODO-making-HTTP-request</pre>
+# TODO-making-HTTP-request</pre>
 
 Once the bot received the slash command request, it has to acknowledge it by using `ack()`:
 
@@ -84,12 +84,14 @@ A simple checking is made to see if the number of arguments passed is correct.
 
 Finally we would like to make a HTTP request to GitHub. But first we have to install and include the library `requests`.
 
-1. `pip install requests`{{execute}}
+1. `pip install requests`{{execute interrupt}}
 2. 
 <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-import-requests-library">
 import requests</pre>
 
-From the [GitHub API Documentation](https://docs.github.com/en/rest/repos/repos#get-a-repository), we can get the total number of open issues and pull requests of a repository in the attribute `open_issues_count` of the response of GET https://api.github.com/repos/OWNER/REPO.
+From the [GitHub API Documentation](https://docs.github.com/en/rest/repos/repos#get-a-repository), we can get the total number of open issues and pull requests of a repository in the attribute `open_issues_count` of the response from GET https://api.github.com/repos/OWNER/REPO.
+
+Here we make a request to the GitHub API and will make a respond in Slack base on the response.
 
 <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-making-HTTP-request">
    # Doc: https://docs.github.com/en/rest/repos/repos#get-a-repository
@@ -102,7 +104,9 @@ From the [GitHub API Documentation](https://docs.github.com/en/rest/repos/repos#
       respond("Error!")
 </pre>
 
-Here we make a request to the GitHub API and will make a respond in Slack base on the response.
+Now everything is set, you can try to run the bot:
+
+`python main.py`{{execute interrupt}}
 
 Example:
 

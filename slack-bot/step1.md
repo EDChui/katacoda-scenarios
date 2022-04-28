@@ -35,7 +35,7 @@ Then we have to give the bot some permissions to send messages in our Slack work
 
 ## Setup Environment Variable(s)
 
-It is a good practice to set the OAuth Token as environment variable instead of purely pasting it in the Python code. See [here](https://api.slack.com/authentication/best-practices).
+It is a good practice to set the OAuth Token as environment variable instead of purely pasting it in the Python code. See [here](https://api.slack.com/authentication/best-practices) why you should not do it.
 
 1. First, create a `.env` file.
    

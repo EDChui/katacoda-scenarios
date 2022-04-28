@@ -13,8 +13,8 @@ With the Slack bot, multiple events can be monitored and notified in Slack easil
 In this tutorial, you will learn:
 
 How to write and deploy a Slack bot that can 
-- Reply to a [@mention](https://slack.com/help/articles/205240127-Use-mentions-in-Slack#mention-someone) message (Event handling and app_mention)
-- Make a HTTP request to query the usage of some services, for example, querying the total number of issues and pull requests of a repository on GitHub. (Event handling, HTTP request and Slack command)
+- Reply to a [@mention](https://slack.com/help/articles/205240127-Use-mentions-in-Slack#mention-someone) message (Event handling)
+- Make a HTTP request to query the usage of some services, for example, querying the total number of issues and pull requests of a repository on GitHub. (Event handling, HTTP request)
 - Send a message in a channel whenever there is a merge/pull request made in GitHub (Webhook)
 
 This tutorial will introduce the following library and framework
