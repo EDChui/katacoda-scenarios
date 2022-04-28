@@ -19,9 +19,9 @@ Before we start coding, we have to make some more configuration for out bot.
    
    Replace "xapp-xxxxxxxxxxxxxxxxxxxx" with your own app token.
 
-    <pre class="file" data-filename=".env" data-target="append">
-    SLACK_APP_TOKEN=xapp-xxxxxxxxxxxxxxxxxxxx
-    </pre>
+   <pre class="file" data-filename=".env" data-target="append">
+   SLACK_APP_TOKEN=xapp-xxxxxxxxxxxxxxxxxxxx
+   </pre>
 
 ### Enable Socket Mode
 
@@ -32,60 +32,59 @@ Before we start coding, we have to make some more configuration for out bot.
 
 1. Install slack-bolt
 
-	`pip install slack-bolt`{{execute}}
+   `pip install slack-bolt`{{execute}}
 
 2. Start over with a new template
    
-    <pre class="file" data-filename="main.py" data-target="replace">
-    # TODO-include-bolt-library
-    
-    import re
-    import os
-    from dotenv import load_dotenv
+   <pre class="file" data-filename="main.py" data-target="replace">
+   # TODO-include-bolt-library
+   import re
+   import os
+   from dotenv import load_dotenv
 
-    # Load environment variable(s).
-    load_dotenv()
-    SLACK_BOT_TOKEN=os.getenv("SLACK_BOT_TOKEN")
-    # TODO-load-new-environment-variable
+   # Load environment variable(s).
+   load_dotenv()
+   SLACK_BOT_TOKEN=os.getenv("SLACK_BOT_TOKEN")
+   # TODO-load-new-environment-variable
 
-    # TODO-initialize-app
+   # TODO-initialize-app
 
-    # TODO-listen-incoming-app-mention-event
+   # TODO-listen-incoming-app-mention-event
 
-    if __name__ == "__main__":
-        # TODO-main-function
-	</pre>
+   if __name__ == "__main__":
+      # TODO-main-function
+   </pre>
 
 3. Include the libraries for Slack Bolt
 
-    <pre class="file" data-filename="main.py" data-target="insert" data-marker="TODO-include-bolt-library">
-    from slack_bolt import App
-    from slack_bolt.adapter.socket_mode import SocketModeHandler
-    </pre>
+   <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-include-bolt-library">
+   from slack_bolt import App
+   from slack_bolt.adapter.socket_mode import SocketModeHandler
+   </pre>
 
 4. Load the newly added environment variable
 
-    <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-load-new-environment-variable">
-    SLACK_APP_TOKEN=os.getenv("SLACK_APP_TOKEN")
-    </pre>
+   <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-load-new-environment-variable">
+   SLACK_APP_TOKEN=os.getenv("SLACK_APP_TOKEN")
+   </pre>
 
 5. Initialize the app with the bot token
 
-    <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-initialize-app">
-    app = App(token=SLACK_BOT_TOKEN)
-    </pre>
+   <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-initialize-app">
+   app = App(token=SLACK_BOT_TOKEN)
+   </pre>
 
 6. Start the app in the main function
-    
-    <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-main-function">
-    SocketModeHandler(app, SLACK_APP_TOKEN).start()
-    </pre>
+   
+   <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-main-function">
+   SocketModeHandler(app, SLACK_APP_TOKEN).start()
+   </pre>
 
 7. Try running the App
    
    You can try to see if the app is running by 
 
-    `python main.py`{{execute interrupt}}
+   `python main.py`{{execute interrupt}}
 
    The console will output "Bolt app is running!" if everything works fine.
 
@@ -112,8 +111,8 @@ When the event is triggered, a regular expression is used to check the text, whi
 <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-listen-incoming-app-mention-event">
 @app.event("app_mention")
 def reply_mention(event, say):
-    if (re.search("hello", event["text"], re.IGNORECASE)):
-        say(f"Hello <@{event['user']}>!")
+   if (re.search("hello", event["text"], re.IGNORECASE)):
+      say(f"Hello <@{event['user']}>!")
 </pre>
 
 We can try to run the bot with
