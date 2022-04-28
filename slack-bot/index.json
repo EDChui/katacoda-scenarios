@@ -12,7 +12,7 @@
       {
         "title": "Step 2 - Event Handling",
         "text": "step2.md",
-        "code": "setup_step2.sh"
+        "background": "setup_step2.sh"
       },
       {
         "title": "Step 3",
@@ -36,9 +36,6 @@
     "uieditorpath": "/root/app",
     "uisettings": "python"
   },
-  "files": [
-    "main.py"
-  ],
   "backend": {
     "imageid": "python:3.8"
   }

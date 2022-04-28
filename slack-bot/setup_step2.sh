@@ -25,3 +25,4 @@ def send_message(channel: str, message: str):
 if __name__ == "__main__":
     # TODO-main-function
 EOF
+cp /tmp/main.py .
