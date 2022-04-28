@@ -14,6 +14,7 @@ Before we start coding, we have to make some more configuration for our bot.
 2. In the "Basic Information" of Settings, scroll down to the section *"App-Level Tokens"*, select **"Generate Token and Scopes"**.
 3. Give your app token a name, we will name it as "SLACK_APP_TOKEN" in this tutorial.
 4. Select the scope **"connections:write"**.
+   ![Generate App Level Token](./assets/step2/generate_app_level_token.jpg)
 5. Generate the token and copy it to your clipboard. The token should be in the format of "xapp-xxxxxxxxxxxxxxxxxxxx".
 6. Add your token to `.env`.
    
@@ -37,10 +38,10 @@ Before we start coding, we have to make some more configuration for our bot.
 2. Start over with a new template
    
    <pre class="file" data-filename="main.py" data-target="replace">
-   # TODO-include-bolt-library
-   import re
+   # TODO-import-bolt-library
    import os
    from dotenv import load_dotenv
+   import re
 
    # Load environment variable(s).
    load_dotenv()
@@ -57,7 +58,7 @@ Before we start coding, we have to make some more configuration for our bot.
 
 3. Include the libraries for Slack Bolt
 
-   <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-include-bolt-library">
+   <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-import-bolt-library">
    from slack_bolt import App
    from slack_bolt.adapter.socket_mode import SocketModeHandler
    </pre>
@@ -86,6 +87,8 @@ Before we start coding, we have to make some more configuration for our bot.
 
    The console will output "Bolt app is running!" if everything is setup properly.
 
+   Press "Ctrl+C" in the terminal to shutdown the app.
+
 ## Event Handling
 
 ### Subscribe to Event
@@ -111,8 +114,7 @@ When the event is triggered, a regular expression is used to check the text that
 @app.event("app_mention")
 def reply_mention(event, say):
    if (re.search("hello", event["text"], re.IGNORECASE)):
-      say(f"Hello <@{event['user']}>!")
-</pre>
+      say(f"Hello <@{event['user']}>!")</pre>
 
 We can try to run the bot with
 

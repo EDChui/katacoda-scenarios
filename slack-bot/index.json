@@ -2,7 +2,7 @@
   "title": "Building a Slack Bot with Python",
   "description": "This tutorial demonstrates how to build a simple software bot for Slack.",
   "difficulty": "Intermediate",
-  "time": "1 hours",
+  "time": "30 minutes - 1 hours",
   "details": {
     "steps": [
       {
@@ -14,7 +14,7 @@
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Step 3 - Slash Command",
         "text": "step3.md"
       },
       {
