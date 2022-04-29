@@ -43,7 +43,7 @@ Now we have create our secret for the webhook URL, we will use it later in setti
 
 In the root directory of your project, create the directory `.github/workflows`
 
-⚠️ Due to some bug with Katacoda scenarios, the directory `.github` cannot be shown in the editor. Therefore the directory `github` is made here instead. Please make sure you use `.github/workflows` in your repository. ⚠️
+⚠️ **Due to some bug with Katacoda scenarios, the directory `.github` cannot be shown in the editor. Therefore the directory `github` is made here instead. Please make sure you use `.github/workflows` in your repository.** ⚠️
 
 `cd /root/slack-bot; mkdir -p github/workflows; cd github/workflows`{{execute interrupt}}
 
@@ -78,7 +78,7 @@ on:
     pull_request:
         branches: [ main ]</pre>
 
-Finally, we have to setup our job of the action.
+Finally, we have to setup our job for the action.
 
 <pre class="file" data-filename="slack-notification.yml" data-target="insert" data-marker="# TODO-jobs">
 jobs:
@@ -97,7 +97,7 @@ and now we define the steps consist in the workflow. In this tutorial, we only h
 
 We can simply preform this action by using curl that make a POST request to our webhook.
 
-`${{github.event_name}}` and `${{github.event.repository.full_name}}` are the [GitHub Contexts](https://docs.github.com/en/actions/learn-github-actions/contexts#github-context) that tells us what is the action triggered the GitHub Action and the name of the repository.
+`${{github.event_name}}` and `${{github.event.repository.full_name}}` are the [GitHub Contexts](https://docs.github.com/en/actions/learn-github-actions/contexts#github-context) that tells us what is the event triggered the GitHub Action and the name of the repository respectively.
 `${{ secrets.SLACK_BOT_WEBHOOK_URL }}` is the secret keys contains the URL of our webhook.
 
 <pre class="file" data-filename="slack-notification.yml" data-target="insert" data-marker="# TODO-step">

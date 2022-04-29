@@ -12,7 +12,7 @@ For example, by doing `/issue_count KTH devops-course` in Slack, the Slack bot w
 2. Under *Features* in the left panel, select **"Slash Commands"**.
 3. Select "Create New Command". Here we would name our slash command to be "/issue_count".
    ![Create Slash Command](./assets/step3/create_slash_command.jpg)
-4. Save the Changes.
+4. Save the changes.
 5. You might need to reinstall your app, follow the instructions to reinstall it.
 
 ## Handle Slash Command
@@ -62,7 +62,7 @@ def get_issue_count(ack, command, respond):
 
 # TODO-making-HTTP-request</pre>
 
-Once the bot received the slash command request, it has to acknowledge it by using `ack()`:
+Once the bot received the slash command request, the bot has to acknowledge it by using `ack()`:
 
 <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-acknowledge-command-request">
    # Acknowledge command request.
