@@ -53,7 +53,7 @@ and create a `.yml` file for the action.
 
 In this part of the tutorial, we will start using the template below
 
-<pre class="file" data-filename="github/workflows/slack-notification.yml" data-target="replace">
+<pre class="file" data-filename="slack-notification.yml" data-target="replace">
 # TODO-action-name
 
 # TODO-trigger-event

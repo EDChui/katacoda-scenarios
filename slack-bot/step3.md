@@ -2,7 +2,7 @@
 
 This part of the tutorial will show how the bot can respond to a "/" command and make a HTTP request to GitHub to query the total number of open issues and pull requests of a repository.
 
-For example, by doing "/issue_count KTH devops-course" in Slack, the Slack bot will response the total number of open issues and pull requests in the repository https://github.com/KTH/devops-course.
+For example, by doing `/issue_count KTH devops-course` in Slack, the Slack bot will response the total number of open issues and pull requests in the repository https://github.com/KTH/devops-course.
 
 ## Configuration in Slack App
 
@@ -91,7 +91,7 @@ import requests</pre>
 
 From the [GitHub API Documentation](https://docs.github.com/en/rest/repos/repos#get-a-repository), we can get the total number of open issues and pull requests of a repository in the attribute `open_issues_count` of the response from GET https://api.github.com/repos/OWNER/REPO.
 
-Here we make a request to the GitHub API and will make a respond in Slack base on the response.
+Here we make a request to the GitHub API and will make a respond in Slack base on the HTTP response.
 
 <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-making-HTTP-request">
    # Doc: https://docs.github.com/en/rest/repos/repos#get-a-repository
@@ -108,7 +108,9 @@ Now everything is set, you can try to run the bot:
 
 `python main.py`{{execute interrupt}}
 
-Examples:
+---
+
+Usage examples:
 
 Response from the bot after the command `/issue_count KTH devops-course` is made in the channel, note that [KTH/devops-course](https://github.com/KTH/devops-course) is an existing repository:
 
