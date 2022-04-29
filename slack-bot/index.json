@@ -18,8 +18,9 @@
         "text": "step3.md"
       },
       {
-        "title": "Step 4",
-        "text": "step4.md"
+        "title": "Step 4 - Webhook",
+        "text": "step4.md",
+        "code": "setup_step4.sh"
       }
     ],
     "intro": {

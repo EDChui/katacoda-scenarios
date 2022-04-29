@@ -108,7 +108,7 @@ Now everything is set, you can try to run the bot:
 
 `python main.py`{{execute interrupt}}
 
-Example:
+Examples:
 
 Response from the bot after the command `/issue_count KTH devops-course` is made in the channel, note that [KTH/devops-course](https://github.com/KTH/devops-course) is an existing repository:
 

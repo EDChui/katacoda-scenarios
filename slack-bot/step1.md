@@ -1,3 +1,5 @@
+**If you see the message "This environment is no longer available." in the terminal, please refresh the page and load the scenario again. :)**
+
 # Sending a Message via Bot
 
 This part of the tutorial will show how the bot can send a message using [slack-sdk](https://pypi.org/project/slack-sdk/) library.
@@ -51,6 +53,8 @@ It is a good practice to set the OAuth Token as environment variable instead of 
    `pip install python-dotenv`{{execute}}
 
    and this is the code for loading and using the environment variable
+
+   `main.py`{{open}}
 
    <pre class="file" data-filename="main.py" data-target="replace">
    import os
