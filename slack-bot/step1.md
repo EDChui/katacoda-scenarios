@@ -48,7 +48,7 @@ It is a good practice to set the OAuth Token as environment variable instead of 
    `app/.env`{{open}}
 3. Replace "xoxb-xxxxxxxxxxxxxxxxxxxx" with your own Bot User OAuth Token.
 
-   <pre class="file" data-filename=".env" data-target="replace">
+   <pre class="file" data-filename="app/.env" data-target="replace">
    SLACK_BOT_TOKEN=xoxb-xxxxxxxxxxxxxxxxxxxx
    </pre>
 
@@ -60,7 +60,7 @@ It is a good practice to set the OAuth Token as environment variable instead of 
 
    `app/main.py`{{open}}
 
-   <pre class="file" data-filename="main.py" data-target="replace">
+   <pre class="file" data-filename="app/main.py" data-target="replace">
    import os
    from dotenv import load_dotenv
 

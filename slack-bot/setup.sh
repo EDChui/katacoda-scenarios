@@ -1,2 +1,1 @@
-mkdir -p slack-bot
-cd slack-bot
+mkdir -p slack-bot; cd slack-bot

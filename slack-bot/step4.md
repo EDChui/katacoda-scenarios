@@ -28,15 +28,17 @@ Or you can use [Postman](https://www.postman.com/) to make the POST request.
 
 In the root directory of your project, create the directory `.github/workflows`
 
-`cd /root/slack-bot; mkdir .github; cd .github; mkdir workflows; cd workflows`{{execute interrupt}}
+⚠️ Due to some bug with Katacoda scenarios, the directory `.github` cannot be shown in the editor. Therefore the directory `github` is made here instead. Please make sure you use `.github/workflows` in your repository. ⚠️
+
+`cd /root/slack-bot; mkdir github/workflows; cd github/workflows`{{execute interrupt}}
 
 and create a `.yml` file for the action.
 
-`.github/workflows/slack-notification.yml`{{open}}
+`github/workflows/slack-notification.yml`{{open}}
 
 In this part of the tutorial, we will start using the template below
 
-<pre class="file" data-filename="slack-notification.yml" data-target="replace">
+<pre class="file" data-filename="github/workflows/slack-notification.yml" data-target="replace">
 # TODO-action-name
 
 # TODO-trigger-event
