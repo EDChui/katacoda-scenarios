@@ -21,7 +21,7 @@ Now we could code our bot to handle the slash command after the setup is made.
 
 Let's Start with a new template
 
-<pre class="file" data-filename="app/main.py" data-target="replace">
+<pre class="file" data-filename="main.py" data-target="replace">
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 
@@ -51,7 +51,7 @@ if __name__ == "__main__":
 
 Here we will build a function using the decorator `@app.command` which will allow the bot to handle the command being called.
 
-<pre class="file" data-filename="app/main.py" data-target="insert" data-marker="# TODO-handle-issue-count-slash-command">
+<pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-handle-issue-count-slash-command">
 @app.command("/issue_count")
 def get_issue_count(ack, command, respond):
 # TODO-acknowledge-command-request
@@ -64,19 +64,19 @@ def get_issue_count(ack, command, respond):
 
 Once the bot received the slash command request, it has to acknowledge it by using `ack()`:
 
-<pre class="file" data-filename="app/main.py" data-target="insert" data-marker="# TODO-acknowledge-command-request">
+<pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-acknowledge-command-request">
    # Acknowledge command request.
    ack()</pre>
 
 Then we would split the argument string into a list such that we can further process the request.
 
-<pre class="file" data-filename="app/main.py" data-target="insert" data-marker="# TODO-split-string-into-list-as-arguments">
+<pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-split-string-into-list-as-arguments">
    # Split the arguments into a list.
    args = command["text"].split()</pre>
 
 A simple checking is made to see if the number of arguments passed is correct.
 
-<pre class="file" data-filename="app/main.py" data-target="insert" data-marker="# TODO-arguments-checking">
+<pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-arguments-checking">
    # Check if the number of arguments matches.
    if len(args) != 2:
       respond(f"Error: expected 2 arguments, got {len(args)}.")
@@ -86,14 +86,14 @@ Finally we would like to make a HTTP request to GitHub. But first we have to ins
 
 1. `pip install requests`{{execute interrupt}}
 2. 
-<pre class="file" data-filename="app/main.py" data-target="insert" data-marker="# TODO-import-requests-library">
+<pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-import-requests-library">
 import requests</pre>
 
 From the [GitHub API Documentation](https://docs.github.com/en/rest/repos/repos#get-a-repository), we can get the total number of open issues and pull requests of a repository in the attribute `open_issues_count` of the response from GET https://api.github.com/repos/OWNER/REPO.
 
 Here we make a request to the GitHub API and will make a respond in Slack base on the response.
 
-<pre class="file" data-filename="app/main.py" data-target="insert" data-marker="# TODO-making-HTTP-request">
+<pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-making-HTTP-request">
    # Doc: https://docs.github.com/en/rest/repos/repos#get-a-repository
    response = requests.get(f"https://api.github.com/repos/{args[0]}/{args[1]}")
    if response.status_code == 404:

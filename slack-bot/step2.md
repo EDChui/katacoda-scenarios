@@ -20,7 +20,7 @@ Before we start coding, we have to make some more configuration for our bot.
    
    Replace "xapp-xxxxxxxxxxxxxxxxxxxx" with your own app token.
 
-   <pre class="file" data-filename="app/.env" data-target="append">
+   <pre class="file" data-filename=".env" data-target="append">
    SLACK_APP_TOKEN=xapp-xxxxxxxxxxxxxxxxxxxx
    </pre>
 
@@ -37,7 +37,7 @@ Before we start coding, we have to make some more configuration for our bot.
 
 2. Start over with a new template
    
-   <pre class="file" data-filename="app/main.py" data-target="replace">
+   <pre class="file" data-filename="main.py" data-target="replace">
    # TODO-import-bolt-library
    import os
    from dotenv import load_dotenv
@@ -58,24 +58,24 @@ Before we start coding, we have to make some more configuration for our bot.
 
 3. Include the libraries for Slack Bolt
 
-   <pre class="file" data-filename="app/main.py" data-target="insert" data-marker="# TODO-import-bolt-library">
+   <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-import-bolt-library">
    from slack_bolt import App
    from slack_bolt.adapter.socket_mode import SocketModeHandler
    </pre>
 
 4. Load the newly added environment variable
 
-   <pre class="file" data-filename="app/main.py" data-target="insert" data-marker="# TODO-load-new-environment-variable">
+   <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-load-new-environment-variable">
    SLACK_APP_TOKEN=os.getenv("SLACK_APP_TOKEN")</pre>
 
 5. Initialize the app with the bot token
 
-   <pre class="file" data-filename="app/main.py" data-target="insert" data-marker="# TODO-initialize-app">
+   <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-initialize-app">
    app = App(token=SLACK_BOT_TOKEN)</pre>
 
 6. Start the app in the main function
    
-   <pre class="file" data-filename="app/main.py" data-target="insert" data-marker="# TODO-main-function">
+   <pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-main-function">
    SocketModeHandler(app, SLACK_APP_TOKEN).start()
    </pre>
 
@@ -109,7 +109,7 @@ Here we will build a function using the decorator `@app.event` which will allow 
 
 When the event is triggered, a regular expression is used to check the text that sent to the bot to see if it contains the word "hello" (regardless of case). If the regex is matched, the bot will reply "Hello @username" accordingly. 
 
-<pre class="file" data-filename="app/main.py" data-target="insert" data-marker="# TODO-listen-incoming-app-mention-event">
+<pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-listen-incoming-app-mention-event">
 # Reply message that mentioned the bot.
 @app.event("app_mention")
 def reply_mention(event, say):

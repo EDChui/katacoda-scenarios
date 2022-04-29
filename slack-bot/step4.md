@@ -28,10 +28,7 @@ Or you can use [Postman](https://www.postman.com/) to make the POST request.
 
 In the root directory of your project, create the directory `.github/workflows`
 
-`mkdir -p .github/workflows`{{execute interrupt}}
-
-`cd .github/workflows`{{execute interrupt}}
-
+`cd /root/slack-bot; mkdir .github; cd .github; mkdir workflows; cd workflows`{{execute interrupt}}
 
 and create a `.yml` file for the action.
 

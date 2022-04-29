@@ -48,7 +48,7 @@ It is a good practice to set the OAuth Token as environment variable instead of 
    `app/.env`{{open}}
 3. Replace "xoxb-xxxxxxxxxxxxxxxxxxxx" with your own Bot User OAuth Token.
 
-   <pre class="file" data-filename="app/.env" data-target="replace">
+   <pre class="file" data-filename=".env" data-target="replace">
    SLACK_BOT_TOKEN=xoxb-xxxxxxxxxxxxxxxxxxxx
    </pre>
 
@@ -60,7 +60,7 @@ It is a good practice to set the OAuth Token as environment variable instead of 
 
    `app/main.py`{{open}}
 
-   <pre class="file" data-filename="app/main.py" data-target="replace">
+   <pre class="file" data-filename="main.py" data-target="replace">
    import os
    from dotenv import load_dotenv
 
@@ -79,14 +79,14 @@ It is a good practice to set the OAuth Token as environment variable instead of 
 
 2. Import the libraries for the web client and exception
 
-   <pre class="file" data-filename="app/main.py" data-target="prepend">
+   <pre class="file" data-filename="main.py" data-target="prepend">
    from slack_sdk import WebClient
    from slack_sdk.errors import SlackApiError
    </pre>
 
 3. Create a web client instance
 
-   <pre class="file" data-filename="app/main.py" data-target="append">
+   <pre class="file" data-filename="main.py" data-target="append">
    # Create a web client instance.
    client = WebClient(token=SLACK_BOT_TOKEN)
    </pre>
@@ -97,7 +97,7 @@ It is a good practice to set the OAuth Token as environment variable instead of 
    Channel name should be in the format of "#*something*", for example, "#general".
    Channel ID should looks something like "C0XXXXXX", you will learn how to get it in the next step.
 
-   <pre class="file" data-filename="app/main.py" data-target="append">
+   <pre class="file" data-filename="main.py" data-target="append">
    def send_message(channel: str, message: str):
       try:
          response = client.chat_postMessage(
@@ -119,7 +119,7 @@ It is a good practice to set the OAuth Token as environment variable instead of 
 
    To send a message, replace "C0XXXXXX" with your channel ID or channel name, for example, "#general".
 
-   <pre class="file" data-filename="app/main.py" data-target="append">
+   <pre class="file" data-filename="main.py" data-target="append">
    if __name__ == "__main__":
       send_message("C0XXXXXX", "Hello world, nice to meet you!")
    </pre>
