@@ -39,22 +39,26 @@ Then we have to give the bot some permissions to send messages in our Slack work
 
 It is a good practice to set the OAuth Token as environment variable instead of purely pasting it in the Python code. See [here](https://api.slack.com/authentication/best-practices) why you should not do it.
 
-1. First, create a `.env` file.
+1. First create a `app` directory for our bot.
    
-   `.env`{{open}}
-2. Replace "xoxb-xxxxxxxxxxxxxxxxxxxx" with your own Bot User OAuth Token.
+   `mkdir app; cd app`{{execute}}
+
+2. Create a `.env` file.
+   
+   `app/.env`{{open}}
+3. Replace "xoxb-xxxxxxxxxxxxxxxxxxxx" with your own Bot User OAuth Token.
 
    <pre class="file" data-filename=".env" data-target="replace">
    SLACK_BOT_TOKEN=xoxb-xxxxxxxxxxxxxxxxxxxx
    </pre>
 
-3. To load and use the environment variable in `.env`, we have to use the python-dotenv library.
+4. To load and use the environment variable in `.env`, we have to use the python-dotenv library.
 
    `pip install python-dotenv`{{execute}}
 
    and this is the code for loading and using the environment variable
 
-   `main.py`{{open}}
+   `app/main.py`{{open}}
 
    <pre class="file" data-filename="main.py" data-target="replace">
    import os

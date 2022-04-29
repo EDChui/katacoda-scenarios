@@ -1,2 +1,2 @@
-mkdir -p app
-cd app
+mkdir -p slack-bot
+cd slack-bot

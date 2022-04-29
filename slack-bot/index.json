@@ -33,7 +33,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "/root",
+    "uieditorpath": "/root/slack-bot",
     "uisettings": "python"
   },
   "backend": {
