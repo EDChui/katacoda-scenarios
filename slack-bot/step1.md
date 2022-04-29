@@ -1,4 +1,4 @@
-**If you see the message "This environment is no longer available." in the terminal, please refresh the page and load the scenario again. :)**
+**If you see the message "This environment is no longer available." in the terminal, please refresh the page and load the scenario again.**
 
 # Sending a Message via Bot
 
@@ -19,7 +19,7 @@ First go to https://api.slack.com/ to create our first app.
 
 ## Give Permission(s) to the App
 
-Then we have to give the bot some permissions to send messages in our Slack workspace. It is always a good idea to limit the resources that the bot can access. (See [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)).
+Then we have to give the bot some permissions to send messages in our Slack workspace. It is always a good idea to limit the resources that the bot can access. (See [the principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)).
 
 1. Under the *Basic Information* of Settings, select **"Bots"** in the menu of "Add features and functionality".
    
@@ -37,7 +37,7 @@ Then we have to give the bot some permissions to send messages in our Slack work
 
 ## Setup Environment Variable(s)
 
-It is a good practice to set the OAuth Token as environment variable instead of purely pasting it in the Python code. See [here](https://api.slack.com/authentication/best-practices) why you should not do it.
+It is a good practice to set the OAuth Token as environment variable instead of purely pasting it in the Python code. See [here](https://api.slack.com/authentication/best-practices) why you should do so.
 
 1. First create a `app` directory for our bot.
    
@@ -75,9 +75,9 @@ It is a good practice to set the OAuth Token as environment variable instead of 
 
    `pip install slack-sdk`{{execute}}
 
-   Again, note that we are *NOT* using [slackclient](https://pypi.org/project/slackclient/) in this tutorial as it is now a legacy code.
+   Again, note that we are *NOT* using [slackclient](https://pypi.org/project/slackclient/) in this tutorial as it is announced to be a legacy code.
 
-2. Import the libraries for the web client and exception
+2. Import the libraries for the web client and catching exception
 
    <pre class="file" data-filename="main.py" data-target="prepend">
    from slack_sdk import WebClient

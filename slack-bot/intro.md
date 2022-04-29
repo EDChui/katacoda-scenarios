@@ -28,4 +28,4 @@ This tutorial will introduce the following library and framework
 
 ## Keywords
 
-Slack bot, Slack SDK, Slack Bolt, Python
+Python, Slack bot, Slack SDK, Slack Bolt, Slack Webhook
