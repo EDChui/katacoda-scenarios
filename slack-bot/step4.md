@@ -28,11 +28,14 @@ Or you can use [Postman](https://www.postman.com/) to make the POST request.
 
 In the root directory of your project, create the directory `.github/workflows`
 
-`mkdir .github/workflows`{{execute interrupt}}
+`mkdir -p .github/workflows`{{execute interrupt}}
+
+`cd .github/workflows`{{execute interrupt}}
+
 
 and create a `.yml` file for the action.
 
-`slack-notification.yml`{{open}}
+`.github/workflows/slack-notification.yml`{{open}}
 
 In this part of the tutorial, we will start using the template below
 
@@ -46,13 +49,13 @@ In this part of the tutorial, we will start using the template below
 
 First, we need to provide our GitHub Action a name
 
-<pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-action-name">
+<pre class="file" data-filename="slack-notification.yml" data-target="insert" data-marker="# TODO-action-name">
 # Name of the action
 name: Slack Notification</pre>
 
 Then we need to setup the event that the action will listen to. In here, we want our bot to listen to the push and pull request made on the `main` branch of the repository.
 
-<pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-trigger-event">
+<pre class="file" data-filename="slack-notification.yml" data-target="insert" data-marker="# TODO-trigger-event">
 # Event(s) that trigger the action.
 # Doc: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#webhook-events
 on:
@@ -63,7 +66,7 @@ on:
 
 Finally, we have to setup our job of the action.
 
-<pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-jobs">
+<pre class="file" data-filename="slack-notification.yml" data-target="insert" data-marker="# TODO-jobs">
 jobs:
 	send_notification:
 		# TODO-runs-on
@@ -73,12 +76,12 @@ jobs:
 
 We want the action to run on the latest Ubuntu
 
-<pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-jobs">
+<pre class="file" data-filename="slack-notification.yml" data-target="insert" data-marker="# TODO-jobs">
 runs-on: ubuntu-latest</pre>
 
 and now we define the step consists in the workflow. In this tutorial, we only have one step, that is, posting a message to Slack.
 
-<pre class="file" data-filename="main.py" data-target="insert" data-marker="# TODO-step">
+<pre class="file" data-filename="slack-notification.yml" data-target="insert" data-marker="# TODO-step">
         steps:
             - name: Send notification to Slack
               run: |

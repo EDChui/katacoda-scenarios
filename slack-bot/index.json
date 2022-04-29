@@ -33,7 +33,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "/root/app",
+    "uieditorpath": "/root",
     "uisettings": "python"
   },
   "backend": {
