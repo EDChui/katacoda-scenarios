@@ -30,7 +30,7 @@ In the root directory of your project, create the directory `.github/workflows`
 
 ⚠️ Due to some bug with Katacoda scenarios, the directory `.github` cannot be shown in the editor. Therefore the directory `github` is made here instead. Please make sure you use `.github/workflows` in your repository. ⚠️
 
-`cd /root/slack-bot; mkdir github/workflows; cd github/workflows`{{execute interrupt}}
+`cd /root/slack-bot; mkdir -p github/workflows; cd github/workflows`{{execute interrupt}}
 
 and create a `.yml` file for the action.
 
@@ -75,13 +75,13 @@ jobs:
 
 We want the action to run on the latest Ubuntu
 
-<pre class="file" data-filename="slack-notification.yml" data-target="insert" data-marker="# TODO-jobs">
+<pre class="file" data-filename="slack-notification.yml" data-target="insert" data-marker="# TODO-runs-on">
 runs-on: ubuntu-latest</pre>
 
 and now we define the step consists in the workflow. In this tutorial, we only have one step, that is, posting a message to Slack.
 
 <pre class="file" data-filename="slack-notification.yml" data-target="insert" data-marker="# TODO-step">
-        steps:
+steps:
             - name: Send notification to Slack
               run: |
                 curl -X POST \
